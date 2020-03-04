@@ -15,9 +15,18 @@ func main() {
 	if *iamfile == "" && *rbacfile == "" {
 		log.Fatalln("Need at least either an IAM policy file or RBAC role file to continue, sorry :(")
 	}
-	content, err := iamutil.DumpJSON(*iamfile)
-	if err != nil {
-		log.Fatalln(fmt.Sprintf("Can't parse IAM policy file: %v", err))
+	regocontent := ""
+	if *iamfile != "" {
+		log.Printf("Parsing IAM file %v", *iamfile)
+		iamcontent, err := iamutil.DumpJSON(*iamfile)
+		if err != nil {
+			log.Fatalln(fmt.Sprintf("Can't parse IAM policy file: %v", err))
+		}
+		regocontent = iamcontent
 	}
-	fmt.Println(content)
+	if *rbacfile != "" {
+		log.Printf("Parsing RBAC file %v", *rbacfile)
+
+	}
+	fmt.Println(regocontent)
 }
