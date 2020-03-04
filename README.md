@@ -25,10 +25,9 @@ Rego representation of the combined input.
 
 ```sh
 $ ucnpl --iam test/iam/p000.json --rbac test/rbac/p000.yaml
-Parsing policies
-Generating unified Rego model
-Result:
----
+2020/03/04 15:41:37 Parsing IAM file test/iam/p001.json
+2020/03/04 15:41:38 Parsing RBAC file test/rbac/p000.yaml
+2020/03/04 15:41:38 Generating unified Rego model
 package unimodel123
 
 allow {
