@@ -7,6 +7,6 @@ s3_read_write_global[msg] {
   action := input.iam[i].Statement[j].Action
   effect == "Allow"
   action == "s3:*"
-  msg := sprintf("Policy %v allows to read/write", sid)
+  msg := sprintf("Policy '%v' allows to read/write all S3 buckets", [sid])
 }
 
