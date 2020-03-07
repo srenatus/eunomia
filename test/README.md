@@ -2,7 +2,8 @@
 
 First off, you want to install the [OPA CLI tool](https://www.openpolicyagent.org/docs/latest/#running-opa).
 
-Then:
+Then you can run any policies in the `test/` directory, for example as follows:
+imagine you have an [IAM policy for an S3 bucket](s3_input_000.json) and a [Rego policy checking for certain violations](s3_rules_000.rego): 
 
 ```
 $ opa eval \
